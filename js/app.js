@@ -1015,3 +1015,32 @@ document.getElementById("phonepeButton").addEventListener("click", function() {
     window.location.href = phonePeURL;
 });
 ;
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('orderForm');
+    const confirmationMsg = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+        sendFormData(formDataObject);
+        sendToWhatsApp(formDataObject); // Add this line to send WhatsApp message
+        confirmationMsg.style.display = 'block';
+        form.reset();
+    });
+
+    function sendFormData(formData) {
+        // Replace this with your code to send form data
+        console.log('Form data:', formData);
+    }
+
+    function sendToWhatsApp(data) {
+        const message = `Name: ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}`;
+        const phoneNumber = 'whatsappphonenumber'; // Replace with your WhatsApp number
+        const url = `https://wa.me/${phoneNumber}/?text=${message}`;
+        window.open(url, '_blank');
+    }
+});
