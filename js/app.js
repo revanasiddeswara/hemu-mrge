@@ -218,7 +218,7 @@ const util = (() => {
             origin: { y: 0.8 },
             zIndex: 1057
         });
-        await session.check();
+        // await session.check();
         await animation();
     };
 
@@ -1000,53 +1000,41 @@ const audio = (() => {
 //         ubah,
 //         kirim,
 //     };
-document.getElementById("phonepeButton").addEventListener("click", function() {
-    var amount = document.getElementById("amountInput").value;
+// document.getElementById("phonepeButton").addEventListener("click", function() {
+//     var amount = document.getElementById("amountInput").value;
 
-    if (!amount || isNaN(amount)) {
-        alert("Please enter a valid amount");
-        return;
-    }
+//     if (!amount || isNaN(amount)) {
+//         alert("Please enter a valid amount");
+//         return;
+//     }
 
-    // Construct the PhonePe payment URL with the entered amount
-    var phonePeURL = "https://mapi.phonepe.com/v3/deeplink?amount=" + amount;
+//     // Construct the PhonePe payment URL with the entered amount
+//     var phonePeURL = "https://mapi.phonepe.com/v3/deeplink?amount=" + amount;
 
-    // Redirect the user to the PhonePe payment URL
-    window.location.href = phonePeURL;
-});
-;
+//     // Redirect the user to the PhonePe payment URL
+//     window.location.href = phonePeURL;
+// });
+// ;
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('orderForm');
     const confirmationMsg = document.getElementById('confirmation');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
+        event.preventDefault(); // Prevent default form submission
         const formData = new FormData(form);
         const formDataObject = {};
         formData.forEach((value, key) => {
             formDataObject[key] = value;
         });
         sendFormData(formDataObject);
-        sendToWhatsApp(formDataObject); // Add this line to send WhatsApp message
         confirmationMsg.style.display = 'block';
         form.reset();
     });
 
     function sendFormData(formData) {
-        // Replace this with your code to send form data
-        console.log('Form data:', formData);
-    }
-
-    function sendToWhatsApp(data) {
-        const message = `Name: ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}`;
-        const phoneNumber = '916362041773'; // Replace with your WhatsApp number
-        const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
-
-        const link = document.createElement('a');
-        link.href = url;
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        const { name, email, contact } = formData;
+        const message = `Name: ${name}\nEmail: ${email}\nContact: ${contact}\nMessage: ${message}`;
+        const whatsappLink = `https://wa.me/6362041773/?text=${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank');
     }
 });
