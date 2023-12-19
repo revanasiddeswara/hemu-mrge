@@ -1039,8 +1039,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function sendToWhatsApp(data) {
         const message = `Name: ${data.name}%0AEmail: ${data.email}%0APhone: ${data.phone}`;
-        const phoneNumber = '6362041773'; // Replace with your WhatsApp number
-        const url = `https://wa.me/${phoneNumber}/?text=${message}`;
-        window.open(url, '_blank');
+        const phoneNumber = '916362041773'; // Replace with your WhatsApp number
+        const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 });
