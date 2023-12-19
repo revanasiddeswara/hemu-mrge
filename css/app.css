@@ -212,3 +212,6 @@ footer {
 .input-group.full-width textarea {
     width: calc(100% - 12px); /* Adjust as needed */
 }
+#contact{
+    margin-top: 10%;
+}
