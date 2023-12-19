@@ -134,3 +134,81 @@ footer {
     margin-top: -0.5rem;
     padding-bottom: 5rem;
 }
+/* Common styles for form elements */
+#orderForm {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    flex: 0 0 calc(30% - 1rem); /* Adjust width as needed */
+    margin-bottom: 1rem;
+}
+.input-group1{
+    flex: 0 0 calc(30% - 1rem); /* Adjust width as needed */
+    margin-bottom: 1rem;
+    width: 70%;
+}
+.input-group label {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+#orderForm input[type="submit"] {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #111111;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#orderForm input[type="submit"]:hover {
+    background-color: #cccccc;
+}
+
+#confirmation {
+    display: none;
+    color: #ffffff;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .input-group {
+        flex: 0 0 100%;
+    }
+}
+.input-group.full-width {
+    flex: 0 0 100%;
+}
+
+.input-group.full-width textarea {
+    width: calc(100% - 12px); /* Adjust as needed */
+}
