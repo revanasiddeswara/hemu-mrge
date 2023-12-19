@@ -1033,7 +1033,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function sendFormData(formData) {
         const { name, email, tel,messages } = formData;
-        const message = `Hi Sid's PixelVows am ${name}\nEmail: ${email}\nContact: ${tel}\nMessage: ${messages} `;
+        const message = `Hi Sid's PixelVows\n\nName: ${name}\nEmail: ${email}\nContact: ${phone}\nMessage: ${messages}`;
         const whatsappLink = `https://wa.me/6362041773/?text=${encodeURIComponent(message)}`;
         window.open(whatsappLink, '_blank');
     }
