@@ -74,7 +74,9 @@ body::-webkit-scrollbar {
     right: 2vh !important;
     z-index: 1055 !important;
 }
-
+.btn{
+    color:#111010
+}
 .loading-page {
     position: fixed;
     inset: 0 !important;
@@ -91,7 +93,7 @@ body::-webkit-scrollbar {
 .mouse-animation {
     padding: 0.25rem 0.625rem;
     height: 2rem;
-    border: 0.1rem solid #ffffff;
+    border: 0.1rem solid #111111;
     border-radius: 1.4rem;
     opacity: 0.75;
     box-sizing: content-box;
@@ -117,7 +119,7 @@ body::-webkit-scrollbar {
     width: 0.25rem;
     height: 0.625rem;
     border-radius: 25%;
-    background-color: #ffffff;
+    background-color: #111010;
     animation-name: scroll;
     animation-duration: 2.5s;
     animation-timing-function: linear;
@@ -131,7 +133,7 @@ body::-webkit-scrollbar {
 }
 
 footer {
-    background-color: #cccccc !important;
+    background-color:burlywood  !important;
     margin-top: -0.5rem;
     padding-bottom: 5rem;
 }
@@ -218,4 +220,10 @@ footer {
 }
 #home{
     background-color: antiquewhite;
+}
+.text-center{
+    color:#1c1a1a
+}
+small a{
+    color:cornsilk
 }
